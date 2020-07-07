@@ -1,0 +1,88 @@
+{
+  "validations": [
+    {
+      "path": "value",
+      "label": "Text",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_1",
+      "toleranceInfo": {
+        "ignoreCase": true,
+        "trimWhitespace": true
+      }
+    },
+    {
+      "path": "formula",
+      "label": "Formula",
+      "makeRule": true,
+      "operator": "formula-equals",
+      "feedbackType": "TYPE_4"
+    },
+    {
+      "path": "fontAttrs.def.bold",
+      "label": "Bold",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_2",
+      "parent": "Font"
+    },
+    {
+      "path": "fontAttrs.def.underline",
+      "label": "Underline",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_2",
+      "parent": "Font"
+    },
+    {
+      "path": "fontAttrs.def.italic",
+      "label": "Italic",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_2",
+      "parent": "Font"
+    },
+    {
+      "path": "style.format",
+      "label": "Format",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_3"
+    },
+    {
+      "path": "style.verticalAlign",
+      "label": "Vertical Alignment",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_5"
+    },
+    {
+      "path": "style.textAlign",
+      "label": "Horizontal Alignment",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_5"
+    },
+    {
+      "path": "fontAttrs.def.size",
+      "label": "Font Size",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_6"
+    },
+    {
+      "path": "fontAttrs.def.color",
+      "label": "Font Colour",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_6"
+    },
+    {
+      "path": "style.background",
+      "label": "Fill Colour",
+      "makeRule": true,
+      "operator": "equals",
+      "feedbackType": "TYPE_6"
+    }
+  ]
+}

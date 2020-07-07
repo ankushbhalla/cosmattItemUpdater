@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON Updator</title>
+    <style>
+        textarea {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #parent {
+            display: flex
+        }
+        button {
+            margin: 25px;
+        }
+    </style>
+</head>
+<body>
+        <!-- <script src="../src//presentation-json-updator.js"></script>
+        <script src="../src//question-json-converter.js"></script>
+        <script src="./src/utilities//scoring-converter.js"></script>
+        <script src="./src/utilities/rule-generator.worker.js"></script> -->
+        <script src="./dist/question-json-converter.js"></script>
+        <script src="./test/main.js"></script>
+        <script>
+            function utilityFunction(operation){
+                switch (operation.type){
+                    case 'PRESENTATION':
+                        var ref = new JsonUpdatorWrapper();
+                        ref.updatePresentationLeoJSON();
+                        break;
+                    case 'QUESTION':
+                        var ref = new JsonUpdatorWrapper();
+                        ref.updateQuestionLeoJSON();
+                        break;
+                    default: break;
+                }
+                
+            }
+        </script>
+</body>
+<div id="parent">
+<div>
+<button onclick="utilityFunction({type:'PRESENTATION'})">Update Presentation LEO JSON</button>
+<br/>
+<button onclick="utilityFunction({type:'QUESTION'})">Update Question LEO JSON</button>
+<br/>
+<textarea id="result" rows="40" cols="90"></textarea>
+</div>
+</div>
+</html>
