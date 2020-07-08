@@ -85,10 +85,15 @@ export class QuestionJSONConverter {
             this.updateSheetID(this.convertedJSONTemplate.resources["RE2"]['leonardoJSON']);
         }
 
-        let scoringRules = this.generateScoringRules(updatedSourceResourceObj['leonardoJSON'].data, updatedValidationResponseResourceObj['leonardoJSON'].data);
-        distributeTotalScoreEqually(TOTAL_SCORE, scoringRules)
-        let convertedScoringRules = this.scoringRuleConverter(scoringRules, updatedValidationResponseResourceObj['leonardoJSON'].data);
-        this.scoringRules = convertedScoringRules.scoringJson;
+        let scoringRulesArray = this.generateScoringRules(updatedSourceResourceObj['leonardoJSON'].data, updatedValidationResponseResourceObj['leonardoJSON'].data);
+        distributeTotalScoreEqually(TOTAL_SCORE, scoringRulesArray)
+        let scoringJson = {
+            type: "sum",
+            overallScore: TOTAL_SCORE,
+            rules: scoringRulesArray
+        }
+        let convertedScoringRules = this.scoringRuleConverter(scoringJson, updatedValidationResponseResourceObj['leonardoJSON'].data);
+        this.scoringRules = convertedScoringRules.scoringJson.rules;
         updatedValidationResponseResourceObj['leonardoJSON'].data = convertedScoringRules.solutionJson;
     }
 
@@ -101,10 +106,11 @@ export class QuestionJSONConverter {
     updateValidationNode(oldJSONObj) {
         this.convertedJSONTemplate.validation = oldJSONObj.validation;
         this.convertedJSONTemplate.validation.validResponse.resource = "RE2";
-        this.convertedJSONTemplate.validation.rules = {};
-        this.convertedJSONTemplate.validation.rules['type'] = "SUM";
-        this.convertedJSONTemplate.validation.rules['score'] = TOTAL_SCORE;
-        this.convertedJSONTemplate.validation.rules.rules = this.scoringRules;
+        // this.convertedJSONTemplate.validation.rules = {};
+        this.convertedJSONTemplate.validation.rules = this.scoringRules;
+        // this.convertedJSONTemplate.validation.rules['type'] = "SUM";
+        // this.convertedJSONTemplate.validation.rules['score'] = TOTAL_SCORE;
+        // this.convertedJSONTemplate.validation.rules.rules = this.scoringRules;
     }
 
     updateSheetID (dataNode){
