@@ -1,6 +1,7 @@
 import {RuleGenerator} from './utilities/rule-generator.worker';
 import {ScoringConverter} from './utilities/scoring-converter';
 import { distributeTotalScoreEqually } from './utilities/rule.service';
+import { FeedbackGenerator } from "./utilities/feedback-generator";
 
 const TOTAL_SCORE = 100;
 
@@ -85,7 +86,8 @@ export class QuestionJSONConverter {
             this.updateSheetID(this.convertedJSONTemplate.resources["RE2"]['leonardoJSON']);
         }
 
-        let scoringRulesArray = this.generateScoringRules(updatedSourceResourceObj['leonardoJSON'].data, updatedValidationResponseResourceObj['leonardoJSON'].data);
+        let rulesArray = this.generateScoringRules(updatedSourceResourceObj['leonardoJSON'].data, updatedValidationResponseResourceObj['leonardoJSON'].data);
+        let scoringRulesArray = FeedbackGenerator.generateAllFeedbacks(rulesArray, updatedValidationResponseResourceObj['leonardoJSON'].data);
         distributeTotalScoreEqually(TOTAL_SCORE, scoringRulesArray)
         let scoringJson = {
             type: "sum",

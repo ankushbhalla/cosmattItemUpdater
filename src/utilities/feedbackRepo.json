@@ -1,0 +1,30 @@
+{
+    "initialText": "",
+    "templates": {
+      "TYPE_1": {
+        "negative": "Cell Text should be \"#VALUE#\".",
+        "positive": "Cell should be empty."
+      },
+      "TYPE_2": {
+        "negative": "#PROPERTY# should be applied.",
+        "positive": "#PROPERTY# should be removed."
+      },
+      "TYPE_3": {
+        "negative": "\"#VALUE#\" format should be applied.",
+        "positive": "\"#VALUE#\" format should be removed."
+      },
+      "TYPE_4": {
+        "negative": "Formula applied should be \"#VALUE#\".",
+        "positive": "Formula should not be applied."
+      },
+      "TYPE_5": {
+        "negative": "\"#VALUE#\" #PROPERTY# should be applied.",
+        "positive": "#PROPERTY# should be removed."
+      },
+      "TYPE_6": {
+        "negative": "#PROPERTY# should be \"#VALUE#\".",
+        "positive": "#PROPERTY# should be removed."
+      }
+  
+    }
+  }
