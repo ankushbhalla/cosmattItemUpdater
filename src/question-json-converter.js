@@ -3,9 +3,6 @@ import {ScoringConverter} from './utilities/scoring-converter';
 
 export class QuestionJSONConverter {
 
-    // convertedJSONTemplate;
-    // scoringRules;
-
     constructor() {
         this.convertedJSONTemplate = getConvertedJSONTemplate();
     }
@@ -100,7 +97,10 @@ export class QuestionJSONConverter {
     updateValidationNode(oldJSONObj) {
         this.convertedJSONTemplate.validation = oldJSONObj.validation;
         this.convertedJSONTemplate.validation.validResponse.resource = "RE2";
-        this.convertedJSONTemplate.validation.rules = this.scoringRules;
+        this.convertedJSONTemplate.validation.rules = {};
+        this.convertedJSONTemplate.validation.rules['type'] = "SUM";
+        this.convertedJSONTemplate.validation.rules['score'] = 100;
+        this.convertedJSONTemplate.validation.rules.rules = this.scoringRules;
     }
 
     updateSheetID (dataNode){
