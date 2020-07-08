@@ -166,7 +166,6 @@ function getConvertedJSONTemplate() {
         "meta": {
             "schemaVersion": 1.0,
             "title": "",
-            "type": "question"
         },
         "templatePreferences": {
             "splitter": {
