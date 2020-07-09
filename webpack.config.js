@@ -1,6 +1,7 @@
 module.exports = {
     entry: {
-        'question-json-converter': './src/question-json-converter.js'
+        'question-json-converter': './src/question-json-converter.js',
+        'presentation-json-converter': './src/presentation-json-converter.js'
     },
     output: {
         filename: '[name].js',

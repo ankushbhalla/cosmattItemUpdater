@@ -1,20 +1,19 @@
-class JsonUpdator {
+import * as sh from 'shorthash';
 
-    updatedJSONSTemplate;
-    activeSheetID;
+export class PresentationJSONConverter {
 
     constructor() {
-        this.updatedJSONSTemplate = getUpdatedJSONTemplate();
+        this.updatedJSONSTemplate = getConvertedJSONTemplate();
     }
 
-    getUpdatedPresentationJSON = (ipJson) => {
+    getUpdatedPresentationJSON(ipJson){
         if (ipJson) {
             this.populateUpdatedJSONSTemplate(ipJson);
         }
         return this.updatedJSONSTemplate;
     }
 
-    populateUpdatedJSONSTemplate = (ipJson) => {
+    populateUpdatedJSONSTemplate(ipJson){
         let oldJSONObj = ipJson;
         if (oldJSONObj) {
             this.updateMetaNode(oldJSONObj.options.data);
@@ -31,23 +30,23 @@ class JsonUpdator {
         }
     }
 
-    updateMetaNode(oldJSONObj) {
+    updateMetaNode(oldJSONObj){
         this.updatedJSONSTemplate.meta.title = oldJSONObj.meta.title;
     }
 
-    updateSheetBarNode = (oldJSONObj) => {
+    updateSheetBarNode(oldJSONObj){
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.sheetbar.visible = oldJSONObj.sheetbar.visible;
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.sheetbar.allowInsertDelete = oldJSONObj.sheetbar['allow-insert-delete'];
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.sheetbar.allowRename = oldJSONObj.sheetbar['allow-rename'];
     }
 
-    updateFormulaBarNode = (oldJSONObj) => {
+    updateFormulaBarNode(oldJSONObj){
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.formulabar.visible = oldJSONObj.formulabar.visible;
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.formulabar.namebox = oldJSONObj.formulabar.namebox;
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.formulabar.expanded = oldJSONObj.formulabar.expanded;
     }
 
-    updateResourcesNode = (oldJSONObj) => {
+    updateResourcesNode(oldJSONObj){
         let resourceObj = {};
         let objKey = Object.keys(oldJSONObj)[0];
         resourceObj['type'] = oldJSONObj[objKey].type;
@@ -56,7 +55,7 @@ class JsonUpdator {
         this.updatedJSONSTemplate.resources["RE1"] = resourceObj;
     }
 
-    updateGridNode = (oldJSONObj) => {
+    updateGridNode(oldJSONObj){
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.rowHeader = oldJSONObj.data.content.canvas.preferences.grid.rowHeader;
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.colHeader = oldJSONObj.data.content.canvas.preferences.grid.colHeader;
         if (this.activeSheetID) {
@@ -65,7 +64,7 @@ class JsonUpdator {
         this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.showGridLines = oldJSONObj.data.resources[oldJSONObj.data.content.canvas.resource].spreadsheet.data.sheets[0].showGridLines;
     }
 
-    updateSheetID = (dataNode) => {
+    updateSheetID(dataNode){
         let sheetsObj = dataNode.data.sheets;
         let activeSheetName = dataNode.data.activeSheet;
         for (let sheetObjKey in sheetsObj) {
@@ -79,15 +78,15 @@ class JsonUpdator {
         }
     }
 
-    getSheetID = (sheetName) => {
-        let sheetID = "";
+    getSheetID(sheetName){
+        let sheetID = "sid";
         if (sheetName) {
-            sheetID = "SID123";
+            sheetID = sheetID + sh.unique(sheetName);
         }
         return sheetID;
     }
 
-    updateCellStyle = (obj) => {
+    updateCellStyle(obj){
         if (!obj || !this.isObject(obj) || Object.keys(obj).length <= 0) {
             return;
         }
@@ -101,37 +100,16 @@ class JsonUpdator {
         }
     }
 
-    isObject(obj) {
+    isObject(obj){
         return obj && typeof obj === 'object' && obj.constructor === Object;
     }
 
-    updateLeoTimeStamp = () => {
-        this.updatedJSONSTemplate.leonardoId = "leo" + new Date().getTime();
+    updateLeoTimeStamp(){
+        this.updatedJSONSTemplate.leonardoId = "leo-" + new Date().getTime();
     }
-
-    // getActiveSheetID = () => {
-    //     let activeSheetID;
-    //     let objKey = Object.keys(this.updatedJSONSTemplate.resources)[0];
-    //     if(objKey){
-    //         let activeSheetName = this.updatedJSONSTemplate.resources[objKey].leonardoJSON.data.activeSheet;
-    //         if(activeSheetName){
-    //             let activeSheetObj;
-    //             let sheetsObj = this.updatedJSONSTemplate.resources[objKey].leonardoJSON.data.sheets;
-    //             for(let sheetObjKey in sheetsObj){
-    //                 if(sheetsObj[sheetObjKey].name === activeSheetName){
-    //                     activeSheetObj = sheetsObj[sheetObjKey];
-    //                 }
-    //             }
-    //           if(activeSheetObj && activeSheetObj.id !== undefined){
-    //             activeSheetID = activeSheetObj.id;
-    //           }
-    //         }
-    //     }
-    //     return activeSheetID;
-    // }
 }
 
-function getUpdatedJSONTemplate() {
+function getConvertedJSONTemplate() {
 
     let updatedJSONtemplate = {
         "leonardoId": 0,

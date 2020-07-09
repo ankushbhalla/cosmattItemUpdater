@@ -1,7 +1,8 @@
-import {RuleGenerator} from './utilities/rule-generator.worker';
-import {ScoringConverter} from './utilities/scoring-converter';
+import { RuleGenerator } from './utilities/rule-generator.worker';
+import { ScoringConverter } from './utilities/scoring-converter';
 import { distributeTotalScoreEqually } from './utilities/rule.service';
 import { FeedbackGenerator } from "./utilities/feedback-generator";
+import * as sh from 'shorthash';
 
 const TOTAL_SCORE = 100;
 
@@ -11,14 +12,14 @@ export class QuestionJSONConverter {
         this.convertedJSONTemplate = getConvertedJSONTemplate();
     }
 
-    getConvertedQuestionJSON (ipJson){
+    getConvertedQuestionJSON(ipJson) {
         if (ipJson) {
             this.updateConvertedJSONTemplate(ipJson);
         }
         return this.convertedJSONTemplate;
     }
 
-    updateConvertedJSONTemplate (ipJson) {
+    updateConvertedJSONTemplate(ipJson) {
         let oldJSONObj = ipJson;
         if (oldJSONObj) {
             this.updateLeoID();
@@ -46,14 +47,14 @@ export class QuestionJSONConverter {
     }
 
     updateLeoID() {
-        this.convertedJSONTemplate.leonardoId = "leo" + new Date().getTime();
+        this.convertedJSONTemplate.leonardoId = "leo-" + new Date().getTime();
     }
 
-    updateMetaNode(oldJSONObj){
+    updateMetaNode(oldJSONObj) {
         this.convertedJSONTemplate.meta.title = oldJSONObj.meta.title;
     }
 
-    updateSheetBarNode (oldJSONObj) {
+    updateSheetBarNode(oldJSONObj) {
         this.convertedJSONTemplate.templateData.leonardoSpreadsheet.preferences.sheetbar.visible = oldJSONObj.sheetbar.visible;
         this.convertedJSONTemplate.templateData.leonardoSpreadsheet.preferences.sheetbar.allowInsertDelete = oldJSONObj.sheetbar.allowInsertDelete;
         this.convertedJSONTemplate.templateData.leonardoSpreadsheet.preferences.sheetbar.allowRename = oldJSONObj.sheetbar.allowRename;
@@ -65,7 +66,7 @@ export class QuestionJSONConverter {
         this.convertedJSONTemplate.templateData.leonardoSpreadsheet.preferences.formulabar.expanded = oldJSONObj.formulabar.expanded;
     }
 
-    updateResourcesNode (oldJSONObj) {
+    updateResourcesNode(oldJSONObj) {
         let sourceResourceKey = oldJSONObj.content.canvas.resource;
         let sourceResourceObj = oldJSONObj.resources[sourceResourceKey];
         let updatedSourceResourceObj = {};
@@ -75,7 +76,7 @@ export class QuestionJSONConverter {
             this.convertedJSONTemplate.resources["RE1"] = updatedSourceResourceObj;
             this.updateSheetID(this.convertedJSONTemplate.resources["RE1"]['leonardoJSON']);
         }
-        
+
         let validationResponseResourceKey = oldJSONObj.validation.validResponse.resource;
         let validationResponseResourceObj = oldJSONObj.resources[validationResponseResourceKey];
         let updatedValidationResponseResourceObj = {};
@@ -99,23 +100,19 @@ export class QuestionJSONConverter {
         updatedValidationResponseResourceObj['leonardoJSON'].data = convertedScoringRules.solutionJson;
     }
 
-    updateGridNode (oldJSONObj) {
+    updateGridNode(oldJSONObj) {
         this.convertedJSONTemplate.templateData.leonardoSpreadsheet.preferences.grid.rowHeader = oldJSONObj.content.canvas.preferences.grid.rowHeader;
         this.convertedJSONTemplate.templateData.leonardoSpreadsheet.preferences.grid.colHeader = oldJSONObj.content.canvas.preferences.grid.colHeader;
         this.convertedJSONTemplate.templateData.leonardoSpreadsheet.preferences.grid.showGridLines = oldJSONObj.resources[oldJSONObj.content.canvas.resource].spreadsheet.data.sheets[0].showGridLines;
     }
 
-    updateValidationNode(oldJSONObj) {
-        this.convertedJSONTemplate.validation = oldJSONObj.validation;
+    updateValidationNode() {
+        this.convertedJSONTemplate.validation.validResponse = {};
         this.convertedJSONTemplate.validation.validResponse.resource = "RE2";
-        // this.convertedJSONTemplate.validation.rules = {};
         this.convertedJSONTemplate.validation.rules = this.scoringRules;
-        // this.convertedJSONTemplate.validation.rules['type'] = "SUM";
-        // this.convertedJSONTemplate.validation.rules['score'] = TOTAL_SCORE;
-        // this.convertedJSONTemplate.validation.rules.rules = this.scoringRules;
     }
 
-    updateSheetID (dataNode){
+    updateSheetID(dataNode) {
         let sheetsObj = dataNode.data.sheets;
         for (let sheetObjKey in sheetsObj) {
             let sheetID = this.getSheetID(sheetsObj[sheetObjKey].name);
@@ -125,15 +122,15 @@ export class QuestionJSONConverter {
         }
     }
 
-    getSheetID (sheetName) {
-        let sheetID = "";
+    getSheetID(sheetName) {
+        let sheetID = "sid";
         if (sheetName) {
-            sheetID = "SID123";
+            sheetID = sheetID + sh.unique(sheetName);
         }
         return sheetID;
     }
 
-    updateCellStyle (obj) {
+    updateCellStyle(obj) {
         if (!obj || !this.isObject(obj) || Object.keys(obj).length <= 0) {
             return;
         }
@@ -151,13 +148,13 @@ export class QuestionJSONConverter {
         return obj && typeof obj === 'object' && obj.constructor === Object;
     }
 
-    generateScoringRules (initial, final) {
+    generateScoringRules(initial, final) {
         let ruleGenerator = new RuleGenerator(initial, final);
         let rules = ruleGenerator.generateRules();
         return rules;
     }
 
-    scoringRuleConverter (scoringJson, finalGridJson) {
+    scoringRuleConverter(scoringJson, finalGridJson) {
         let scoringConverterRef = new ScoringConverter();
         let covretedScore = scoringConverterRef.convertToPublishFormat(scoringJson, finalGridJson, false);
         return covretedScore;
@@ -213,7 +210,31 @@ function getConvertedJSONTemplate() {
             }
         },
         "resources": {},
-        "validation": {}
+        "validation": {
+            "graderSettings": {
+                "version": "1.0.0",
+                "name": "DefaultGradingEngine",
+                "matchSettings": {
+                    "matcher": "DefaultOOOMatcher",
+                    "matchingStrategies": {
+                        "#sheets": {
+                            "type": "SheetOOOMatchingStrategy",
+                            "textWeightage": ""
+                        },
+                        "#rows": {
+                            "type": "RowOOOMatchingStrategy",
+                            "textWeightage": 0.8,
+                            "cellRefWeightage": 0.2
+                        },
+                        "#cells": {
+                            "type": "CellOOOMatchingStrategy",
+                            "textWeightage": 0.8,
+                            "cellRefWeightage": 0.2
+                        }
+                    }
+                }
+            }
+        }
     }
 
     return convertedJSONtemplate;

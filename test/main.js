@@ -1,16 +1,13 @@
 class JsonUpdatorWrapper {
     leoJSONUpdator = null;
-    constructor(){
-        //this.leoJSONUpdator = new window.JsonUpdator();
-    }
 
     updatePresentationLeoJSON(){
-        fetch('../../assets/leo-old-json.json')
+        fetch('../../assets/leo-old-presentation-json.json')
         .then((response) => {
             return response.json();
         })
         .then((responseData) => {
-            this.leoJSONUpdator = new JsonUpdator();
+            this.leoJSONUpdator = new PresentationJSONConverter();
             let updatedJSON= this.leoJSONUpdator.getUpdatedPresentationJSON(responseData);
             document.getElementById("result").innerHTML = JSON.stringify(updatedJSON);
             console.log(updatedJSON);
@@ -19,7 +16,7 @@ class JsonUpdatorWrapper {
     }
 
     updateQuestionLeoJSON(){
-        fetch('../../assets/leo-question-old-json.json')
+        fetch('../../assets/leo-old-question-json.json')
         .then((response) => {
             return response.json();
         })

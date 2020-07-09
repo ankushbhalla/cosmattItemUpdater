@@ -1,0 +1,523 @@
+{
+    "type": "spreadsheet-DLSleonardo",
+    "options": {
+        "data": {
+            "meta": {
+                "title": "Table1",
+                "type": "presentation"
+            },
+            "content": {
+                "canvas": {
+                    "resource": "SJJm4WkAG",
+                    "preferences": {
+                        "contextMenu": {
+                            "type": "default"
+                        },
+                        "ribbon": {
+                            "visible": false,
+                            "collapsed": false,
+                            "type": "type1"
+                        },
+                        "sheetbar": {
+                            "visible": false,
+                            "allowInsertDelete": false,
+                            "allowRename": false
+                        },
+                        "formulabar": {
+                            "visible": false,
+                            "namebox": false,
+                            "expanded": false
+                        },
+                        "grid": {
+                            "rowHeader": false,
+                            "colHeader": false,
+                            "readOnly": true,
+                            "activeSheet": "Table1"
+                        }
+                    }
+                }
+            },
+            "resources": {
+                "SJJm4WkAG": {
+                    "type": "spreadsheet",
+                    "spreadsheet": {
+                        "data": {
+                            "activeSheet": "Table1",
+                            "defaults": {
+                                "rowHeight": 20,
+                                "columnWidth": 64
+                            },
+                            "sheets": {
+                                "0": {
+                                    "name": "Table1",
+                                    "selection": "A2:A2",
+                                    "activeCell": "A2:A2",
+                                    "frozenRows": 0,
+                                    "frozenColumns": 0,
+                                    "showGridLines": false,
+                                    "mergedCells": [
+                                        "A1:C1"
+                                    ],
+                                    "defaults": {
+                                        "cellFontAttrs": {
+                                            "family": "Arial",
+                                            "size": "12"
+                                        }
+                                    },
+                                    "columns": {
+                                        "0": {
+                                            "visible": true,
+                                            "index": 0,
+                                            "width": 245
+                                        },
+                                        "1": {
+                                            "visible": true,
+                                            "index": 1,
+                                            "width": 245
+                                        },
+                                        "2": {
+                                            "visible": true,
+                                            "index": 2,
+                                            "width": 245
+                                        }
+                                    },
+                                    "rows": {
+                                        "0": {
+                                            "visible": true,
+                                            "cells": {
+                                                "0": {
+                                                    "value": "Mechanical Parameters",
+                                                    "index": 0,
+                                                    "ref": "A1",
+                                                    "style": {
+                                                        "background": "#f1f8e9",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12,
+                                                            "bold": true
+                                                        }
+                                                    }
+                                                },
+                                                "1": {
+                                                    "index": 1,
+                                                    "ref": "B1",
+                                                    "style": {
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "top": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12,
+                                                            "bold": true
+                                                        }
+                                                    }
+                                                },
+                                                "2": {
+                                                    "index": 2,
+                                                    "ref": "C1",
+                                                    "style": {
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "top": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12,
+                                                            "bold": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "index": 0,
+                                            "height": 38.984375
+                                        },
+                                        "1": {
+                                            "visible": true,
+                                            "cells": {
+                                                "0": {
+                                                    "value": "Name",
+                                                    "index": 0,
+                                                    "ref": "A2",
+                                                    "style": {
+                                                        "background": "#f1f8e9",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12,
+                                                            "bold": true
+                                                        }
+                                                    }
+                                                },
+                                                "1": {
+                                                    "value": "Value",
+                                                    "index": 1,
+                                                    "ref": "B2",
+                                                    "style": {
+                                                        "background": "#f1f8e9",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12,
+                                                            "bold": true
+                                                        }
+                                                    }
+                                                },
+                                                "2": {
+                                                    "value": "Unit",
+                                                    "index": 2,
+                                                    "ref": "C2",
+                                                    "style": {
+                                                        "background": "#f1f8e9",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#88c88f",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12,
+                                                            "bold": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "index": 1,
+                                            "height": 38.984375
+                                        },
+                                        "2": {
+                                            "visible": true,
+                                            "cells": {
+                                                "0": {
+                                                    "value": "Spindle Inertia",
+                                                    "index": 0,
+                                                    "ref": "A3",
+                                                    "style": {
+                                                        "background": "#ffffff",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12
+                                                        }
+                                                    }
+                                                },
+                                                "1": {
+                                                    "value": 0.01,
+                                                    "index": 1,
+                                                    "ref": "B3",
+                                                    "style": {
+                                                        "background": "#ffffff",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12
+                                                        }
+                                                    }
+                                                },
+                                                "2": {
+                                                    "value": "kg-m²",
+                                                    "index": 2,
+                                                    "ref": "C3",
+                                                    "style": {
+                                                        "background": "#ffffff",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12
+                                                        },
+                                                        "runs": [
+                                                            {
+                                                                "start": 4,
+                                                                "txt": "2",
+                                                                "superScript": true
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "index": 2,
+                                            "height": 38.984375
+                                        },
+                                        "3": {
+                                            "visible": true,
+                                            "cells": {
+                                                "0": {
+                                                    "value": "Rotary friction loss",
+                                                    "index": 0,
+                                                    "ref": "A4",
+                                                    "style": {
+                                                        "background": "#ffffff",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12
+                                                        }
+                                                    }
+                                                },
+                                                "1": {
+                                                    "value": 10,
+                                                    "index": 1,
+                                                    "ref": "B4",
+                                                    "style": {
+                                                        "background": "#ffffff",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12
+                                                        }
+                                                    }
+                                                },
+                                                "2": {
+                                                    "value": "Nm",
+                                                    "index": 2,
+                                                    "ref": "C4",
+                                                    "style": {
+                                                        "background": "#ffffff",
+                                                        "textAlign": "center",
+                                                        "verticalAlign": "middle",
+                                                        "border": {
+                                                            "left": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "top": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "bottom": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            },
+                                                            "right": {
+                                                                "clr": "#d9d9d9",
+                                                                "type": "thin"
+                                                            }
+                                                        }
+                                                    },
+                                                    "fontAttrs": {
+                                                        "def": {
+                                                            "family": "Calibri",
+                                                            "size": 12
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "index": 3,
+                                            "height": 38.984375
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
