@@ -1,0 +1,80 @@
+{
+  "type": "spreadsheet-leonardo",
+  "options": {
+    "data": {
+      "config": {
+        "data": [
+          [
+            "Entity",
+            "Formula"
+          ],
+          [
+            "Inertia of the cylinder about its CG",
+            "J<sub>1</sub> =  0.5 × m × r<sub>1</sub><sup>2</sup>"
+          ],
+          [
+            "Inertia of its mass",
+            "J<sub>2</sub> = m × r<sub>2</sub><sup>2</sup>"
+          ],
+          [
+            "Total Inertia",
+            "J<sub>1</sub> + J<sub>2</sub>"
+          ]
+        ],
+        "styles": {
+          "colorfills": [
+            {
+              "id": 1,
+              "color": "#f1f8e9"
+            }
+          ]
+        },
+        "columns": {
+          "0": {
+            "width": 350
+          },
+          "1": {
+            "width": 180
+          }
+        },
+        "rows": {
+          "0": {
+            "height": 60
+          }
+        },
+        "options": {
+          "rowheaders": false,
+          "colheaders": false,
+          "formulas": false,
+          "manualcolumnresize": false,
+          "defaultAlign": {
+            "horizontal": "center",
+            "vertical": "middle"
+          },
+          "maxRows": 4,
+          "readOnly": true
+        },
+        "modeconfig": {
+          "mode": "Training",
+          "role": "student",
+          "showHintsBtn": false,
+          "showCheckAnswerBtn": false,
+          "hideTopBar": true,
+          "theme": "cosmattThemeGreen",
+          "tableContainsColumnHeaders": true,
+          "LeoHorizontalAlignment": "center"
+        },
+        "currentState": {
+          "cell": {
+            "row": "",
+            "col": ""
+          }
+        }
+      },
+      "style": {
+        "width": "100%",
+        "height": "155"
+      }
+    }
+  }
+}

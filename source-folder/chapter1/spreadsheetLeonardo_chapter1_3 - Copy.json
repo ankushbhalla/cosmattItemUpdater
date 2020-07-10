@@ -1,0 +1,121 @@
+{
+  "type": "spreadsheet-leonardo",
+  "options": {
+    "data": {
+      "config": {
+        "data": [
+          [
+            "Prefix",
+            "Symbol",
+            "Notation"
+          ],
+          [
+            "tera",
+            "T",
+            "10<sup>12</sup>"
+          ],
+          [
+            "giga",
+            "G",
+            "10<sup>9</sup>"
+          ],
+          [
+            "mega",
+            "M",
+            "10<sup>6</sup>"
+          ],
+          [
+            "kilo",
+            "K",
+            "10<sup>3</sup>"
+          ],
+           [
+            "kilo",
+            "K",
+            "10<sup>3</sup>"
+          ],
+          [
+            "deci",
+            "d",
+            "10<sup>-1</sup>"
+          ],
+          [
+            "centi",
+            "c",
+            "10<sup>-2</sup>"
+          ],
+          [
+            "milli",
+            "m",
+            "10<sup>-3</sup>"
+          ],
+          [
+            "micro",
+            "0xC2 0xB5 (c2b5)",
+            "10<sup>-6</sup>"
+          ],
+          [
+            "nano",
+            "n",
+            "10<sup>-9</sup>"
+          ],
+          [
+            "pico",
+            "p",
+            "10<sup>-12</sup>"
+          ]
+        ],
+        "styles": {},
+        "columns": {
+          "0": {
+            "width": 180
+          },
+          "1": {
+            "width": 180
+          },
+          "2": {
+            "width": 180
+          }
+        },
+        "rows": {
+          "0": {
+            "height": 60
+          }
+        },
+        "mergedranges": [],
+        "options": {
+          "rowheaders": false,
+          "colheaders": false,
+          "formulas": false,
+          "manualcolumnresize": false,
+          "defaultAlign": {
+            "horizontal": "center",
+            "vertical": "middle"
+          },
+          "maxRows": 13,
+          "readOnly": true
+        },
+        "modeconfig": {
+          "mode": "Training",
+          "role": "student",
+          "showHintsBtn": false,
+          "showCheckAnswerBtn": false,
+          "hideTopBar": true,
+          "theme": "cosmattThemeGreen",
+          "tableContainsColumnHeaders": true,
+          "LeoHorizontalAlignment": "center"
+        },
+        "currentState": {
+          "cell": {
+            "row": "",
+            "col": ""
+          }
+        }
+      },
+      "style": {
+        "width": "100%",
+        "height": "440"
+      }
+    }
+  }
+}

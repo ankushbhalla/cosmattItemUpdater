@@ -1,0 +1,106 @@
+{
+  "type": "spreadsheet-leonardo",
+  "options": {
+    "data": {
+      "config": {
+        "data": [
+          [
+            "",
+            "1",
+            "2",
+            "3"
+          ],
+          [
+            "<b>Segment</b>",
+            "<b>Time (t)</b>",
+            "<b>Motor Torque (Tm)</b>",
+            "<b>Tm<sup>2</sup> × t<b>"
+          ],
+          [
+            "Accelerate",
+            "0.1",
+            "2",
+            "0.4"
+          ],
+          [
+            "Cruise",
+            "0.1",
+            "0.1",
+            "0.001"
+          ],
+          [
+            "Decelerate",
+            "0.1",
+            "-2",
+            "0.4"
+          ],
+          [
+            "Wait",
+            "0.2",
+            "0",
+            "0"
+          ],
+          [
+            "<span style=\"color:#31BFF3\">Totals</span>",
+            "<span style=\"color:#31BFF3\">0.5</span>",
+            "<span style=\"color:red\"><b>1.27</b></span>",
+            "<span style=\"color:#31BFF3\">0.801</span>"
+          ]
+        ],
+        "styles": {
+          "colorfills": [{
+            "id": 1,
+            "color": "#f1f8e9"
+          }]
+        },
+        "columns": {
+          "0": {
+            "width": 150
+          },
+          "1": {
+            "width": 130
+          },
+          "2": {
+            "width": 160
+          },
+          "3": {
+            "width": 130
+          }
+        },
+        "rows": {},
+        "options": {
+          "rowheaders": false,
+          "colheaders": false,
+          "formulas": false,
+          "manualcolumnresize": false,
+          "defaultAlign": {
+            "horizontal": "center",
+            "vertical": "middle"
+          },
+          "maxRows": 7,
+          "readOnly": true
+        },
+        "modeconfig": {
+          "mode": "Training",
+          "role": "student",
+          "showHintsBtn": false,
+          "showCheckAnswerBtn": false,
+          "hideTopBar": true,
+          "theme": "cosmattThemeGreen",
+          "tableContainsColumnHeaders": true,
+          "LeoHorizontalAlignment": "center"
+        },
+        "currentState": {
+          "cell": {
+            "row": "",
+            "col": ""
+          }
+        }
+      },
+      "style": {
+        "width": "100%",
+        "height": "215"
+      }
+    }
+  }
+}
