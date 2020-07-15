@@ -16,11 +16,11 @@ export class PresentationJSONConverter {
     populateUpdatedJSONSTemplate(ipJson){
         let oldJSONObj = ipJson;
         if (oldJSONObj) {
-            this.updateMetaNode(oldJSONObj.options.data);
-            this.updateSheetBarNode(oldJSONObj.options.data.content.canvas.preferences);
-            this.updateFormulaBarNode(oldJSONObj.options.data.content.canvas.preferences);
-            this.updateResourcesNode(oldJSONObj.options.data.resources);
-            this.updateGridNode(oldJSONObj.options);
+            this.updateMetaNode(oldJSONObj);
+            this.updateSheetBarNode(oldJSONObj.content.canvas.preferences);
+            this.updateFormulaBarNode(oldJSONObj.content.canvas.preferences);
+            this.updateResourcesNode(oldJSONObj.resources);
+            this.updateGridNode(oldJSONObj);
             this.updateLeoTimeStamp();
             if(this.updatedJSONSTemplate.resources && this.updatedJSONSTemplate.resources.RE1 && 
                 this.updatedJSONSTemplate.resources.RE1.leonardoJSON && this.updatedJSONSTemplate.resources.RE1.leonardoJSON.data
@@ -56,12 +56,12 @@ export class PresentationJSONConverter {
     }
 
     updateGridNode(oldJSONObj){
-        this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.rowHeader = oldJSONObj.data.content.canvas.preferences.grid.rowHeader;
-        this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.colHeader = oldJSONObj.data.content.canvas.preferences.grid.colHeader;
+        this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.rowHeader = oldJSONObj.content.canvas.preferences.grid.rowHeader;
+        this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.colHeader = oldJSONObj.content.canvas.preferences.grid.colHeader;
         if (this.activeSheetID) {
             this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.activeSheetId = this.activeSheetID;
         }
-        this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.showGridLines = oldJSONObj.data.resources[oldJSONObj.data.content.canvas.resource].spreadsheet.data.sheets[0].showGridLines;
+        this.updatedJSONSTemplate.templateData.leonardoSpreadsheet.preferences.grid.showGridLines = oldJSONObj.resources[oldJSONObj.content.canvas.resource].spreadsheet.data.sheets[0].showGridLines;
     }
 
     updateSheetID(dataNode){

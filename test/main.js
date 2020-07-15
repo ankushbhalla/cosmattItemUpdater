@@ -17,13 +17,18 @@ class JsonUpdatorWrapper {
                     let jsonData = JSON.parse(data);
                     if (jsonData.options && jsonData.options.data && jsonData.options.data.meta && jsonData.options.data.meta
                         && jsonData.options.data.meta.type === 'presentation') {
-                        let convertedPresentationJSON = wrapperRef.updatePresentationLeoJSON(jsonData);
-                        fs.writeFile(destinationFolderPath+file, convertedPresentationJSON , function (err) {
+                        let convertedPresentationJSON = wrapperRef.updatePresentationLeoJSON(jsonData.options.data);
+                        jsonData.type = "spreadsheet-DLSleonardo-v2";
+                        delete jsonData.options.data.meta;
+                        delete jsonData.options.data.content;
+                        delete jsonData.options.data.resources;
+                        jsonData.options.data['itemId'] = convertedPresentationJSON;
+                        fs.writeFile(destinationFolderPath+file, JSON.stringify(jsonData), function (err) {
                             if (err) throw err;
                           });
                     } else if (jsonData.meta && jsonData.meta.type && jsonData.meta.type === 'question') {
                         let convertedQuestionJSON = wrapperRef.updateQuestionLeoJSON(jsonData);
-                        fs.writeFile(destinationFolderPath+file, convertedQuestionJSON , function (err) {
+                        fs.writeFile(destinationFolderPath+file, JSON.stringify(convertedQuestionJSON), function (err) {
                             if (err) throw err;
                           });
                     }
@@ -35,13 +40,13 @@ class JsonUpdatorWrapper {
     updatePresentationLeoJSON(presentationJSON) {
         let presentationJSONUpdatorRef = new PresentationJSONConverter.PresentationJSONConverter();
         let updatedJSON = presentationJSONUpdatorRef.getUpdatedPresentationJSON(presentationJSON);
-        return JSON.stringify(updatedJSON);
+        return updatedJSON;
     }
 
     updateQuestionLeoJSON(questionJSON) {
         let questionJSONUpdatorRef = new QuestionJSONConverter();
         let updatedJSON = questionJSONUpdatorRef.getConvertedQuestionJSON(questionJSON);
-        return JSON.stringify(updatedJSON);
+        return updatedJSON;
     }
 }
 
