@@ -18,12 +18,15 @@ class JsonUpdatorWrapper {
                     if (jsonData.options && jsonData.options.data && jsonData.options.data.meta && jsonData.options.data.meta
                         && jsonData.options.data.meta.type === 'presentation') {
                         let convertedPresentationJSON = wrapperRef.updatePresentationLeoJSON(jsonData.options.data);
-                        jsonData.type = "spreadsheet-DLSleonardo-v2";
-                        delete jsonData.options.data.meta;
-                        delete jsonData.options.data.content;
-                        delete jsonData.options.data.resources;
-                        jsonData.options.data['itemId'] = convertedPresentationJSON;
-                        fs.writeFile(destinationFolderPath+file, JSON.stringify(jsonData), function (err) {
+                        let convertedJSON = {
+                            type:'spreadsheet-DLSleonardo-v2',
+                            options: {
+                                data: {
+                                    itemId: convertedPresentationJSON
+                                }
+                            }
+                        };
+                        fs.writeFile(destinationFolderPath+file, JSON.stringify(convertedJSON), function (err) {
                             if (err) throw err;
                           });
                     } else if (jsonData.meta && jsonData.meta.type && jsonData.meta.type === 'question') {
