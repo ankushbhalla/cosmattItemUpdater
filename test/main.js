@@ -47,7 +47,7 @@ class JsonUpdatorWrapper {
     }
 
     updateQuestionLeoJSON(questionJSON) {
-        let questionJSONUpdatorRef = new QuestionJSONConverter();
+        let questionJSONUpdatorRef = new QuestionJSONConverter.QuestionJSONConverter();
         let updatedJSON = questionJSONUpdatorRef.getConvertedQuestionJSON(questionJSON);
         return updatedJSON;
     }

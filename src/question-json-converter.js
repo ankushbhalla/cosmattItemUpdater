@@ -223,13 +223,13 @@ function getConvertedJSONTemplate() {
                         },
                         "#rows": {
                             "type": "RowOOOMatchingStrategy",
-                            "textWeightage": 0.8,
-                            "cellRefWeightage": 0.2
+                            "textWeightage": 0,
+                            "cellRefWeightage": 1
                         },
                         "#cells": {
                             "type": "CellOOOMatchingStrategy",
-                            "textWeightage": 0.8,
-                            "cellRefWeightage": 0.2
+                            "textWeightage": 0,
+                            "cellRefWeightage": 1
                         }
                     }
                 }
