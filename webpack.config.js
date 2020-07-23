@@ -14,5 +14,6 @@ module.exports = {
     mode: 'development',
     resolve: {
         extensions: ['.js']
-    }
+    },
+    devtool:'source-map'
 };
